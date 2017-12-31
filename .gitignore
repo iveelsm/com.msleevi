@@ -1,42 +1,23 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# YARN AND NPM
+## Yarn lock files
+yarn.lock
 
-# compiled output
-/dist
-/tmp
-/out-tsc
+## Error logs for npm and yarn
+/*.log
 
-# dependencies
-/node_modules
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# NODE
+## Node modules
+node_modules/
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# JEST
+## Jest coverage
+coverage/
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
+# BABEL
+## Babel compilation directory
+lib/
 
-# e2e
-/e2e/*.js
-/e2e/*.map
-
-# System Files
-.DS_Store
-Thumbs.db
+# WEBPACK
+## Webpack compilation
+dist/
