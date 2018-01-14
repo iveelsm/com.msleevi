@@ -14,9 +14,7 @@ import { isProd } from '../shared/util'
 
 const renderApp = (location: string, plainPartialState: ?Object, routerContext: ?Object = {}) => {
   const store = initStore(plainPartialState)
-  console.log(store)
   const sheets = new SheetsRegistry()
-  console.log(sheets)
   // eslint-disable-next-line
   const appHtml = ReactDOMServer.renderToString(
     <Provider store={store}>
