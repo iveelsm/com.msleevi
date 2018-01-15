@@ -6,8 +6,8 @@ import { Server } from 'http'
 import socketIO from 'socket.io'
 
 import routing from './routing'
-import { WEB_PORT, STATIC_PATH } from '../shared/config'
-import { isProd } from '../shared/util'
+import { WEB_PORT, STATIC_PATH } from './constants/config'
+import { isProd } from './constants/util'
 import setUpSocket from './socket'
 
 const app = express()

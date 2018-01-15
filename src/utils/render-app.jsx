@@ -8,9 +8,9 @@ import { StaticRouter } from 'react-router'
 import { SheetsRegistry, SheetsRegistryProvider } from 'react-jss'
 
 import initStore from './init-store'
-import App from './../shared/app'
-import { APP_CONTAINER_CLASS, JSS_SSR_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config'
-import { isProd } from '../shared/util'
+import App from '../app'
+import { APP_CONTAINER_CLASS, JSS_SSR_CLASS, STATIC_PATH, WDS_PORT } from '../constants/config'
+import { isProd } from '../constants/util'
 
 const renderApp = (location: string, plainPartialState: ?Object, routerContext: ?Object = {}) => {
   const store = initStore(plainPartialState)

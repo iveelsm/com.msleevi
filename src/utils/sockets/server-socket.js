@@ -6,10 +6,10 @@ import {
   IO_CLIENT_JOIN_ROOM,
   IO_CLIENT_HELLO,
   IO_SERVER_HELLO,
-} from '../shared/config'
+} from '../../constants/config'
 
 /* eslint-disable no-console */
-const setUpSocket = (io: Object) => {
+const serverSocket = (io: Object) => {
   io.on(IO_CONNECT, (socket) => {
     console.log('[socket.io] A client connected')
 
@@ -33,4 +33,4 @@ const setUpSocket = (io: Object) => {
 }
 /* es-lint-disable no-console */
 
-export default setUpSocket
+export default serverSocket

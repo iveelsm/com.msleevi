@@ -14,11 +14,10 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
-import setUpSocket from './socket'
-import App from '../shared/app'
-import helloReducer from '../shared/action/reducer/hello'
-import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR } from '../shared/config'
-import { isProd } from '../shared/util'
+import clientSocket from './utils/sockets/client-socket'
+import App from './app'
+import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR } from './constants/config'
+import { isProd } from './constants/util'
 
 window.jQuery = $
 window.Tether = Tether
@@ -53,9 +52,9 @@ ReactDOM.render(wrapApp(App, store), rootEl)
 
 if (module.hot) {
   // flow-disable-next-line
-  module.hot.accept('../shared/app', () => {
+  module.hot.accept('./app', () => {
     // eslint-disable-next-line global-require
-    const NextApp = require('../shared/app').default
+    const NextApp = require('./app').default
     ReactDOM.render(wrapApp(NextApp, store), rootEl)
   })
 }
@@ -65,4 +64,4 @@ const jssServerSide = document.querySelector(JSS_SSR_SELECTOR)
 // flow-disable-next-line
 jssServerSide.parentNode.removeChild(jssServerSide)
 
-setUpSocket(store)
+clientSocket(store)

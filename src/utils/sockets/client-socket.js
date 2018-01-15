@@ -8,13 +8,13 @@ import {
   IO_CLIENT_HELLO,
   IO_CLIENT_JOIN_ROOM,
   IO_SERVER_HELLO,
-} from '../shared/config'
+} from '../../constants/config'
 
 const socket = socketIOClient(window.location.host)
 
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
-const setUpSocket = (store: Object) => {
+const clientSocket = (store: Object) => {
   socket.on(IO_CONNECT, () => {
     console.log('[socket.io] Connected')
     socket.emit(IO_CLIENT_JOIN_ROOM, 'hello-1234')
@@ -32,4 +32,4 @@ const setUpSocket = (store: Object) => {
 
 /* es-lint-enable no-console */
 
-export default setUpSocket
+export default clientSocket
