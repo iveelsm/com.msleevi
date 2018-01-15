@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { APP_NAME } from '../config'
+import { APP_NAME } from '../constants/config'
 import {
   HOME_PAGE_ROUTE,
   HELLO_PAGE_ROUTE,

@@ -5,17 +5,16 @@ import express from 'express'
 import { Server } from 'http'
 import socketIO from 'socket.io'
 
-import routing from './routing'
+import routing from './utils/routing'
 import { WEB_PORT, STATIC_PATH } from './constants/config'
 import { isProd } from './constants/util'
-import setUpSocket from './socket'
 
 const app = express()
 
-// flow-disable-next-line
+// // flow-disable-next-line
 const http = Server(app)
-const io = socketIO(http)
-setUpSocket(io)
+// const io = socketIO(http)
+// setUpSocket(io)
 
 app.use(compression())
 app.use(STATIC_PATH, express.static('dist'))

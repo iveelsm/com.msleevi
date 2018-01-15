@@ -3,7 +3,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import BlogList from '../../container/blog-list'
+import BlogList from '../../../container/list/blog-list'
 
 const title = 'Blog'
 

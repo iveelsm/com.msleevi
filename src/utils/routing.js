@@ -5,14 +5,14 @@ import {
   helloPage,
   helloAsyncPage,
   helloEndpoint,
-} from './controller'
+} from '../controllers/controller'
 
 import {
   HOME_PAGE_ROUTE,
   HELLO_PAGE_ROUTE,
   HELLO_ASYNC_PAGE_ROUTE,
   helloEndpointRoute,
-} from '../shared/routes'
+} from './routes/routes'
 
 import renderApp from './render-app'
 
