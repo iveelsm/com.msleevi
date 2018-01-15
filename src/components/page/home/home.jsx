@@ -22,8 +22,8 @@ const styles = {
   },
 }
 
-var HomePage = React.createClass({
-    render: function () {
+class HomePage extends React.Component {
+    render() {
         return(
             <div>
               <Helmet
@@ -55,9 +55,9 @@ var HomePage = React.createClass({
                 </div>
               </div>
             </div>
-        )
+        );
     }
-})
+}
 
 
 export default HomePage

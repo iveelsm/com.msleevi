@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-var Message = React.createClass({
+class Message extends React.Component {
     render: function () {
         return(
             <p>
@@ -10,6 +10,6 @@ var Message = React.createClass({
             </p>
         );
     }
-})
+}
 
 export default Message

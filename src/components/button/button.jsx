@@ -2,8 +2,8 @@
 
 import React from 'react'
 
-var Button = React.createClass({
-    render: function() {
+class Button extends React.Component {
+    render() {
         return (
             <button onClick={this.props.handleClick}
                 className="btn btn-primary"
@@ -12,6 +12,6 @@ var Button = React.createClass({
             </button>
         );
     }
-})
+}
 
 export default Button

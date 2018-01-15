@@ -1,6 +1,6 @@
 import React from 'react'
 
-var HoverButton = React.createClass({
+class HoverButton extends React.Component {
   getInitialState: function () {
       return {hover: false};
   },
@@ -21,6 +21,6 @@ var HoverButton = React.createClass({
           label
       );
   }
-})
+}
 
 export default HoverButton

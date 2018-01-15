@@ -7,8 +7,8 @@ import BlogList from '../../container/blog-list'
 
 const title = 'Blog'
 
-var BlogPage = React.createClass({
-    render: function() {
+class BlogPage extends React.Component {
+    render() {
         return (
             <div>
               <Helmet
@@ -27,4 +27,4 @@ var BlogPage = React.createClass({
             </div>
         );
     }
-})
+}

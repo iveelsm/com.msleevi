@@ -7,8 +7,8 @@ import { HOME_PAGE_ROUTE } from '../../routes'
 
 const title = 'Page Not Found!'
 
-var NotFoundPage = React.createClass({
-    render: function () {
+class NotFoundPage extends React.Component {
+    render() {
         return (
             <div className="container mt-4">
               <Helmet title={title} />
@@ -21,6 +21,6 @@ var NotFoundPage = React.createClass({
             </div>
         );
     }
-})
+}
 
 export default NotFoundPage

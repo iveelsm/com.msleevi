@@ -3,7 +3,7 @@
 import React from 'react'
 import { APP_NAME } from '../../constants/config'
 
-var Footer = React.createClass({
+class Footer extends React.Component {
     render: function () {
         return (
             <div className="container mt-5">
@@ -14,6 +14,6 @@ var Footer = React.createClass({
             </div>
         );
     }
-})
+}
 
 export default Footer
