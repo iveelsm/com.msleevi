@@ -2,16 +2,10 @@
 
 import {
   homePage,
-  helloPage,
-  helloAsyncPage,
-  helloEndpoint,
-} from '../controllers/controller'
+} from './controllers/controller'
 
 import {
   HOME_PAGE_ROUTE,
-  HELLO_PAGE_ROUTE,
-  HELLO_ASYNC_PAGE_ROUTE,
-  helloEndpointRoute,
 } from './routes/routes'
 
 import renderApp from './render-app'
@@ -19,18 +13,6 @@ import renderApp from './render-app'
 export default (app: Object) => {
   app.get(HOME_PAGE_ROUTE, (req, res) => {
     res.send(renderApp(req.url, homePage()))
-  })
-
-  app.get(HELLO_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, helloPage()))
-  })
-
-  app.get(HELLO_ASYNC_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, helloAsyncPage()))
-  })
-
-  app.get(helloEndpointRoute(), (req, res) => {
-    res.json(helloEndpoint(req.params.num))
   })
 
   app.get('/500', () => {

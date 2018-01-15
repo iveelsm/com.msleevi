@@ -5,18 +5,15 @@ import Helmet from 'react-helmet'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 
-import App from '../app'
-import { APP_CONTAINER_CLASS, JSS_SSR_CLASS, STATIC_PATH, WDS_PORT } from '../constants/config'
-import { isProd } from '../constants/util'
+import App from './app'
+import { APP_CONTAINER_CLASS, JSS_SSR_CLASS, STATIC_PATH, WDS_PORT } from './constants/config'
+import { isProd } from './constants/util'
 
 const renderApp = (location: string, routerContext: ?Object = {}) => {
   // eslint-disable-next-line
-  const appHtml = ReactDOMServer.renderToString(
-      <StaticRouter location={location} context={routerContext}>
-        <App />
-      </StaticRouter>)
+  const appHtml = ReactDOMServer.renderToString(<App />)
   const head = Helmet.rewind()
-
+  console.log("trying")
   return (
     `<!doctype html>
     <html>

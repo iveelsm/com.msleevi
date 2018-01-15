@@ -3,7 +3,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'react-router-dom'
-import { HOME_PAGE_ROUTE } from '../../utils/routes/routes'
+import { HOME_PAGE_ROUTE } from '../../routes/routes'
 
 const title = 'Page Not Found!'
 

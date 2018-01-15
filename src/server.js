@@ -5,7 +5,7 @@ import express from 'express'
 import { Server } from 'http'
 import socketIO from 'socket.io'
 
-import routing from './utils/routing'
+import routing from './routing'
 import { WEB_PORT, STATIC_PATH } from './constants/config'
 import { isProd } from './constants/util'
 

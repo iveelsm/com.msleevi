@@ -3,7 +3,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import BlogList from '../../../container/list/blog-list'
+import BlogList from '../../list/blog-list'
 
 const title = 'Blog'
 
@@ -28,3 +28,5 @@ class BlogPage extends React.Component {
         );
     }
 }
+
+export default BlogPage

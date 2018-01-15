@@ -11,20 +11,21 @@ import BlogPage from './components/page/blog/blog'
 import NotFoundPage from './components/page/not-found'
 import {
   HOME_PAGE_ROUTE,
-} from './utils/routes/routes'
+  BLOG_PAGE_ROUTE,
+} from './routes/routes'
 
 
 class App extends React.Component {
     render() {
-        <div style={{ paddingTop: 54 }}>
-          <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
-          <Nav />
-          <Switch>
-            <Route exact path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
-            <Route path={BLOG_PAGE} render={() => <BlogPage />} />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </div>
+       return (
+            <div style={{ paddingTop: 54 }}>
+              <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
+              <Nav />
+              <Switch>
+                <Route path={HOME_PAGE_ROUTE} component={HomePage} />
+              </Switch>
+            </div>
+        )
     }
 }
 
