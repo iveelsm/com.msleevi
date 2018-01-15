@@ -22,3 +22,5 @@ var HoverButton = React.createClass({
       );
   }
 })
+
+export default HoverButton

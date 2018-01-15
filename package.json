@@ -1,7 +1,7 @@
 {
-  "name": "io.breakfastcoders",
+  "name": "com.msleevi",
   "version": "0.0.1",
-  "description": "Breakfast Coders Website",
+  "description": "Michael Sleevi Website",
   "main": "index.js",
   "repository": "git@github.com:msleevi/io.breakfastcoders.git",
   "author": "Michael Sleevi <michael.sleevi@gmail.com>",
