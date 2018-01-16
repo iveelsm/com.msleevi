@@ -5,6 +5,7 @@ yarn.lock
 ## Error logs for npm and yarn
 /*.log
 
+package-lock.json
 
 # NODE
 ## Node modules
