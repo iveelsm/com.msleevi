@@ -12,6 +12,7 @@ import NotFoundPage from './components/page/not-found'
 import {
   HOME_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,
+  NOT_FOUND_PAGE_ROUTE,
 } from './routes/routes'
 
 
