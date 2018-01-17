@@ -3,13 +3,13 @@
 import webpack from 'webpack'
 import path from 'path'
 
-import { WDS_PORT } from './src/shared/config'
-import { isProd } from './src/shared/util'
+import { WDS_PORT } from './src/constants/config'
+import { isProd } from './src/constants/util'
 
 export default {
   entry: [
     'react-hot-loader/patch',
-    './src/client',
+    './src/',
   ],
   output: {
     filename: 'js/bundle.js',
@@ -32,6 +32,7 @@ export default {
       'Access-Control-Allow-Origin': '*',
     },
   },
+  target: 'node',
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),

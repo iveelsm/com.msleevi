@@ -24,6 +24,7 @@ const styles = {
 
 class HomePage extends React.Component {
     render() {
+        console.log("Rendering Home Page")
         return(
             <div>
               <Helmet
@@ -59,5 +60,4 @@ class HomePage extends React.Component {
     }
 }
 
-
-export default HomePage
+export { HomePage as default }

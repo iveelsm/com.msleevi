@@ -1,11 +1,13 @@
-.PHONY: clean test build dev deploy
+.PHONY: clean build dev deploy
 
 clean:
+	rm -rf build/
 
 test:
 	yarn test
 
 build:
+	yarn test
 	yarn prod:build
 	$(MAKE) package -C build
 

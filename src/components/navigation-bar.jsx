@@ -5,14 +5,13 @@ import { Link, NavLink } from 'react-router-dom'
 import { APP_NAME } from '../constants/config'
 import {
   HOME_PAGE_ROUTE,
-  HELLO_PAGE_ROUTE,
-  HELLO_ASYNC_PAGE_ROUTE,
-  NOT_FOUND_DEMO_PAGE_ROUTE,
+  NOT_FOUND_PAGE_ROUTE,
 } from '../routes/routes'
 
 
-class Nav extends React.Component {
+class NavigationBar extends React.Component {
     render() {
+        console.log("Rendering Nav")
         return (
             <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
               <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
@@ -23,9 +22,7 @@ class Nav extends React.Component {
                 <ul className="navbar-nav mr-auto">
                   {[
                     { route: HOME_PAGE_ROUTE, label: 'Home' },
-                    { route: HELLO_PAGE_ROUTE, label: 'Say Hello' },
-                    { route: HELLO_ASYNC_PAGE_ROUTE, label: 'Say Hello Asynchronously' },
-                    { route: NOT_FOUND_DEMO_PAGE_ROUTE, label: '404 Demo' },
+                    { route: NOT_FOUND_PAGE_ROUTE, label: '404 Demo' },
                   ].map(link => (
                     <li className="nav-item" key={link.route}>
                       <NavLink to={link.route} className="nav-link" activeStyle={{ color: 'white' }} exact onClick={this.props.handleNavLinkClick}>
@@ -38,7 +35,6 @@ class Nav extends React.Component {
             </nav>
         )
     }
-
 }
 
-export default Nav
+export { NavigationBar as default }
