@@ -6,15 +6,15 @@ class HoverButton extends React.Component {
       this.state.hover = false
   }
 
-  mouseOver: function () {
+  mouseOver() {
       this.setState({hover: true});
   },
 
-  mouseOut: function () {
+  mouseOut() {
       this.setState({hover: false});
   },
 
-  render: function() {
+  render() {
       var label = "foo";
       if (this.state.hover) {
           label = "bar";

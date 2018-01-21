@@ -1,4 +1,0 @@
-
-var BlogController = React.createClass({
-
-})
