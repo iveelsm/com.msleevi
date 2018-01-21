@@ -4,7 +4,7 @@ import React from 'react'
 import { APP_NAME } from '../../constants/config'
 
 class Footer extends React.Component {
-    render: function () {
+    render() {
         return (
             <div className="container mt-5">
               <hr />

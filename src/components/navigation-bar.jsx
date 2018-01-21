@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { APP_NAME } from '../constants/config'
 import {
   HOME_PAGE_ROUTE,
+  BLOG_PAGE_ROUTE,
   NOT_FOUND_PAGE_ROUTE,
 } from '../routes/routes'
 
@@ -22,6 +23,7 @@ class NavigationBar extends React.Component {
                 <ul className="navbar-nav mr-auto">
                   {[
                     { route: HOME_PAGE_ROUTE, label: 'Home' },
+                    { route: BLOG_PAGE_ROUTE, label: 'Blog'},
                     { route: NOT_FOUND_PAGE_ROUTE, label: '404 Demo' },
                   ].map(link => (
                     <li className="nav-item" key={link.route}>

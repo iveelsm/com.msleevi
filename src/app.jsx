@@ -7,6 +7,8 @@ import { Route } from 'react-router-dom'
 import { APP_NAME } from './constants/config'
 import NavigationBar from './components/navigation-bar'
 import HomePage from './components/page/home/home'
+import BlogPage from './components/page/blog/blog'
+import Footer from './components/page/footer'
 import NotFoundPage from './components/page/not-found'
 import {
   HOME_PAGE_ROUTE,
@@ -23,8 +25,11 @@ class App extends React.Component {
               <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
               <NavigationBar />
               <Switch>
-                <Route path={HOME_PAGE_ROUTE} component={HomePage} />
+                  <Route path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
+                  <Route path={BLOG_PAGE_ROUTE} render={() => <BlogPage />} />
+                  <Route component={NotFoundPage} />
               </Switch>
+              <Footer />
             </div>
         )
     }

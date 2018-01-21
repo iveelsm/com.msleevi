@@ -17,6 +17,7 @@ import { isProd } from './constants/util'
 
 import {
   HOME_PAGE_ROUTE,
+  BLOG_PAGE_ROUTE,
 } from './routes/routes'
 
 const app = express()
@@ -27,6 +28,10 @@ app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 
 app.get(HOME_PAGE_ROUTE, (req, res) => {
+    res.send(renderApp(req.url, null))
+})
+
+app.get(BLOG_PAGE_ROUTE, (req, res) => {
     res.send(renderApp(req.url, null))
 })
 

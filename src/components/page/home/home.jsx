@@ -23,14 +23,20 @@ const styles = {
 }
 
 class HomePage extends React.Component {
+    componentWillMount() {
+        this.state = {
+            name : { name: 'description', content: 'Michael Sleevi\'s Home Page' },
+            properties : { property: 'og:title', content: APP_NAME },
+        }
+    }
     render() {
         console.log("Rendering Home Page")
         return(
             <div>
               <Helmet
                 meta={[
-                  { name: 'description', content: 'Hello App is an app to say hello' },
-                  { property: 'og:title', content: APP_NAME },
+                  { name: this.state.name.description, content: this.state.name.content },
+                  { property: this.state.properties.property, content: this.state.properties.content },
                 ]}
               />
               <div className="jumbotron">
@@ -38,24 +44,7 @@ class HomePage extends React.Component {
                   <h1 className="display-3 mb-4">{APP_NAME}</h1>
                 </div>
               </div>
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-4 mb-4">
-                    <h3 className="mb-3">Bootstrap</h3>
-                    <p>
-                      <button type="button" data-toggle="modal" data-target=".js-modal-example" className="btn btn-primary">Open Modal</button>
-                    </p>
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <h3 className="mb-3">JSS (soon)</h3>
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <h3 className="mb-3">Websockets</h3>
-                    <p>Open your browser console.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+           </div>
         );
     }
 }
