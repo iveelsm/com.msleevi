@@ -1,20 +1,13 @@
 /* @flow */
 
 import 'babel-polyfill'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ReactDOMServer from 'react-dom/server'
-
-import App from './app'
-import renderApp from './render-app'
-
 import compression from 'compression'
 import express from 'express'
 import { Server } from 'http'
 
+import renderApp from './render-app'
 import { WEB_PORT, STATIC_PATH } from './constants/config'
 import { isProd } from './constants/util'
-
 import {
   HOME_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,
@@ -28,19 +21,22 @@ app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 
 app.get(HOME_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, null))
+  res.send(renderApp(req.url, null))
 })
 
 app.get(BLOG_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, null))
+  res.send(renderApp(req.url, null))
 })
 
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
+  // eslint-disable-next-line no-console
   console.error(err.stack)
   res.status(500).send('Something went wrong!')
 })
 
 http.listen(WEB_PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server running on port ${WEB_PORT}
     ${isProd
     ? '(production)'
