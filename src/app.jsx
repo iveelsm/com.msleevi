@@ -21,6 +21,7 @@ class App extends React.Component {
        return (
             <div style={{ paddingTop: 54 }}>
               <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
+              <NavigationBar />
               <Switch>
                 <Route path={HOME_PAGE_ROUTE} component={HomePage} />
               </Switch>
