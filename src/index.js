@@ -5,14 +5,10 @@ import compression from 'compression'
 import express from 'express'
 import { Server } from 'http'
 
+import routing from './routing'
 import renderApp from './render-app'
 import { WEB_PORT, STATIC_PATH } from './constants/config'
 import { isProd } from './constants/util'
-import {
-  HOME_PAGE_ROUTE,
-  BLOG_PAGE_ROUTE,
-} from './routes/routes'
-
 const app = express()
 const http = Server(app)
 
@@ -20,20 +16,7 @@ app.use(compression())
 app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 
-app.get(HOME_PAGE_ROUTE, (req, res) => {
-  res.send(renderApp(req.url, null))
-})
-
-app.get(BLOG_PAGE_ROUTE, (req, res) => {
-  res.send(renderApp(req.url, null))
-})
-
-// eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
-  // eslint-disable-next-line no-console
-  console.error(err.stack)
-  res.status(500).send('Something went wrong!')
-})
+routing(app)
 
 http.listen(WEB_PORT, () => {
   // eslint-disable-next-line no-console

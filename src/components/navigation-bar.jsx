@@ -6,7 +6,9 @@ import { APP_NAME } from '../constants/config'
 import {
   HOME_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,
-  NOT_FOUND_PAGE_ROUTE,
+  CONTACT_PAGE_ROUTE,
+  PROJECTS_PAGE_ROUTE,
+  CV_PAGE_ROUTE,
 } from '../routes/routes'
 
 
@@ -24,7 +26,9 @@ class NavigationBar extends React.Component {
                   {[
                     { route: HOME_PAGE_ROUTE, label: 'Home' },
                     { route: BLOG_PAGE_ROUTE, label: 'Blog'},
-                    { route: NOT_FOUND_PAGE_ROUTE, label: '404 Demo' },
+                    { route: CONTACT_PAGE_ROUTE, label: 'Contact'},
+                    { route: PROJECTS_PAGE_ROUTE, label: 'Projects'},
+                    { route: CV_PAGE_ROUTE, label: 'CV' },
                   ].map(link => (
                     <li className="nav-item" key={link.route}>
                       <NavLink to={link.route} className="nav-link" activeStyle={{ color: 'white' }} exact onClick={this.props.handleNavLinkClick}>

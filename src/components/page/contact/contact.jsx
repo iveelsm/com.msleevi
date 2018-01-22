@@ -11,3 +11,5 @@ class ContactPage extends React.Component {
 		)
 	}
 }
+
+export { ContactPage as default }

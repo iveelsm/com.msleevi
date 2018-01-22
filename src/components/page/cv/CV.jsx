@@ -1,5 +1,9 @@
+// @flow
 
-class CVPage extends React.Component({
+import React from 'react'
+
+
+class CVPage extends React.Component {
 	render() {
 		return (
 			<div>
@@ -7,4 +11,6 @@ class CVPage extends React.Component({
 			</div>
 		)
 	}
-})
+}
+
+export { CVPage as default }
