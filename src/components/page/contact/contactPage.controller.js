@@ -3,6 +3,7 @@
 import 'axios'
 
 function postContactInformation(endpoint: string, information: Object) {
+	console.log("Posting data!")
 	axios.post(endpoint, information)
 		.then(function(response) {
 			console.log(response)
@@ -12,3 +13,5 @@ function postContactInformation(endpoint: string, information: Object) {
 			console.log(error)
 		})
 }
+
+export { postContactInformation as default }
