@@ -8,6 +8,7 @@ import {
   CV_PAGE_ROUTE,
   PROJECTS_PAGE_ROUTE,
   CONTACT_PAGE_ROUTE,
+  ADMIN_PAGE_ROUTE,
   NOT_FOUND_PAGE_ROUTE,
 } from './routes/routes'
 
@@ -22,15 +23,19 @@ function routing(app: Object) {
   })
 
   app.get(CV_PAGE_ROUTE, (req, res) => {
-	res.send(renderApp(req.url))
+	 res.send(renderApp(req.url))
   })
 
   app.get(PROJECTS_PAGE_ROUTE, (req, res) => {
-	res.send(renderApp(req.url))
+	  res.send(renderApp(req.url))
   })
 
   app.get(BLOG_PAGE_ROUTE, (req, res) => {
-	res.send(renderApp(req.url))
+	  res.send(renderApp(req.url))
+  })
+
+  app.get(ADMIN_PAGE_ROUTE, (req, res) => {
+    res.send(renderApp(req.url))
   })
 
   app.get('*', (req, res) => {

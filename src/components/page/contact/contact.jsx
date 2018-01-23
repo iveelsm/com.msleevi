@@ -38,15 +38,15 @@ class ContactPage extends React.Component {
 			<form onSubmit={this.handleSubmit}>
         <label>
 					Name:
-          <input name="name" type="text" value={this.state.value} onChange={this.handleChange} />
+          <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
         </label>
 			  <label>
 					Email:
-					<input name="email" type="text" value={this.state.value} onChange={this.handleChange} />
+					<input name="email" type="text" value={this.state.email} onChange={this.handleChange} />
 			  </label>
 			  <label>
 					Message:
-					<input name="message" type="text" value={this.state.value} onChange={this.handleChange} />
+					<input name="message" type="text" value={this.state.message} onChange={this.handleChange} />
 			  </label>
 	      <input type="submit" value="Submit" />
       </form>
