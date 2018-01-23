@@ -24,7 +24,7 @@ class ContactPage extends React.Component {
 	}
 
 	handleSubmit() {
-		postContactInformation(this.state)
+		postContactInformation("localhost/6000", this.state)
 		this.state = {
 			name: "",
 			email: "",
