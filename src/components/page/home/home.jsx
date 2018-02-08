@@ -23,30 +23,38 @@ const styles = {
 }
 
 class HomePage extends React.Component {
-    componentWillMount() {
-        this.state = {
-            name : { name: 'description', content: 'Michael Sleevi\'s Home Page' },
-            properties : { property: 'og:title', content: APP_NAME },
-        }
+  componentWillMount() {
+    this.state = {
+      name: { name: 'description', content: 'Michael Sleevi\'s Home Page' },
+      properties: { property: 'og:title', content: APP_NAME },
+      style: styles,
     }
-    render() {
-        console.log("Rendering Home Page")
-        return(
-            <div>
-              <Helmet
-                meta={[
-                  { name: this.state.name.description, content: this.state.name.content },
-                  { property: this.state.properties.property, content: this.state.properties.content },
+  }
+
+  render() {
+    console.log('Rendering Home Page')
+    return (
+      <div>
+        <Helmet
+          meta={[
+                  {
+                    name: this.state.name.description,
+                    content: this.state.name.content,
+                  },
+                  {
+                    property: this.state.properties.property,
+                    content: this.state.properties.content,
+                  },
                 ]}
-              />
-              <div className="jumbotron">
-                <div className="container">
-                  <h1 className="display-3 mb-4">{APP_NAME}</h1>
-                </div>
-              </div>
-           </div>
-        );
-    }
+        />
+        <div className="jumbotron">
+          <div className="container">
+            <h1 className="display-3 mb-4">{APP_NAME}</h1>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export { HomePage as default }

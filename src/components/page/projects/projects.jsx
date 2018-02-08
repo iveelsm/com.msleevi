@@ -3,13 +3,19 @@
 import React from 'react'
 
 class ProjectsPage extends React.Component {
-	render() {
-		return(
-			<div>
-				<h2>"Projects Page"</h2>
-			</div>
-		)
-	}
+  componentWillMount() {
+    this.state = {
+      projects: [],
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>{this.state.projects}</h2>
+      </div>
+    )
+  }
 }
 
 export { ProjectsPage as default }

@@ -4,13 +4,19 @@ import React from 'react'
 
 
 class Post extends React.Component {
-    render() {
-        return (
-            <div onClick={this.props.handleClick} className="post">
-                {this.props.message}
-            </div>
-        );
+  componentWillMount() {
+    this.state = {
+      message: '',
     }
+  }
+
+  render() {
+    return (
+      <div onClick={this.props.handleClick} className="post">
+        {this.state.message}
+      </div>
+    )
+  }
 }
 
 export default Post

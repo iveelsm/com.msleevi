@@ -5,53 +5,52 @@ import './contactPage.controller'
 
 
 class ContactPage extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			name: "",
-			email: "",
-			message: "",
-		}
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
 
-	handleChange(event: Object) {
-	  this.setState({
-			[event.target.name] : event.target.value
-		});
-		console.log(this.state)
-	}
+  handleChange(event: Object) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    })
+    console.log(this.state)
+  }
 
-	handleSubmit() {
-		postContactInformation("localhost/6000", this.state)
-		this.state = {
-			name: "",
-			email: "",
-			message: "",
-		}
-	}
+  handleSubmit() {
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
+    }
+  }
 
-	render() {
-		console.log("Rendering Contact!")
-		return (
-			<form onSubmit={this.handleSubmit}>
-        <label>
-					Name:
+  render() {
+    console.log('Rendering Contact!')
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="name">
+          Name:
           <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
         </label>
-			  <label>
-					Email:
-					<input name="email" type="text" value={this.state.email} onChange={this.handleChange} />
-			  </label>
-			  <label>
-					Message:
-					<input name="message" type="text" value={this.state.message} onChange={this.handleChange} />
-			  </label>
-	      <input type="submit" value="Submit" />
+        <label htmlFor="email">
+          Email:
+          <input name="email" type="text" value={this.state.email} onChange={this.handleChange} />
+        </label>
+        <label htmlFor="message">
+          Message:
+          <input name="message" type="text" value={this.state.message} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
       </form>
-		)
-	}
+    )
+  }
 }
 
 export { ContactPage as default }

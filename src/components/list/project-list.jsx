@@ -1,11 +1,19 @@
 import React from 'react'
 
 class ProjectList extends React.Component {
-	render() {
-		return (
-			<div>
-				<h3>"Foo Bar"</h3>
-			</div>
-		)
-	}
+  componentWillMount() {
+    this.state = {
+      projects: [],
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>{this.state.projects}</h3>
+      </div>
+    )
+  }
 }
+
+export { ProjectList as default }

@@ -6,8 +6,8 @@ import express from 'express'
 import { Server } from 'http'
 
 import routing from './routing'
-import { WEB_PORT, STATIC_PATH } from './constants/config'
-import { isProd } from './constants/util'
+import { WEB_PORT, STATIC_PATH } from '../constants/config'
+import { isProd } from '../constants/util'
 
 const app = express()
 const http = Server(app)

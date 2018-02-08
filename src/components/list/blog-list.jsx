@@ -3,25 +3,24 @@
 import React from 'react'
 
 class BlogList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts : [],
-            numberOfComments : []
-        };
+  constructor(props) {
+    super(props)
+    this.state = {
+      posts: [],
     }
+  }
 
-    componentWillMount() {
-        console.log("Include fetchPosts shit here")
-    }
+  componentWillMount() {
+    console.log('Include fetchPosts shit here')
+  }
 
-    render() {
-        return (
-            <ul>
-                <li>{this.props.list}</li>
-            </ul>
-        );
-    }
+  render() {
+    return (
+      <ul>
+        <li>{this.state.posts}</li>
+      </ul>
+    )
+  }
 }
 
 export default BlogList

@@ -5,9 +5,9 @@ import Helmet from 'react-helmet'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 
-import App from './app'
-import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from './constants/config'
-import { isProd } from './constants/util'
+import App from '../components/app'
+import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../constants/config'
+import { isProd } from '../constants/util'
 
 
 const renderApp = (location: string, routerContext: ?Object = {}) => {

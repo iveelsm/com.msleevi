@@ -27,9 +27,15 @@ import {
 
 
 class App extends React.Component {
+  componentWillMount() {
+    this.state = {
+      userStatus: '',
+    }
+  }
+
   render() {
-   console.log("Rendering App")
-   return (
+    console.log('Rendering App')
+    return (
       <div style={{ paddingTop: 54 }}>
         <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
         <NavigationBar />

@@ -1,17 +1,22 @@
 // @flow
 
-import 'axios'
+import axios from 'axios'
 
 // eslint-disable-next-line
-export const homePage = () => null
+const homePage = () => null
 
 function getHomePageData(endpoint: string) {
-	return axios.get(endpoint)
-		.then(function(response) {
-			console.log(response)
-		})
-		.catch(function(error) {
-			console.log("Error")
-			console.log(error)
-		}
+  return axios.get(endpoint)
+    .then((response) => {
+      console.log(response)
+    })
+    .catch((error) => {
+      console.log('Error')
+      console.log(error)
+    })
+}
+
+export {
+  homePage,
+  getHomePageData,
 }

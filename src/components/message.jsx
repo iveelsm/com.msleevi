@@ -3,13 +3,18 @@
 import React from 'react'
 
 class Message extends React.Component {
-    render: function () {
-        return(
-            <p>
-                {this.props.message}
-            </p>
-        );
+  componentWillMount() {
+    this.state = {
+      message: '',
     }
+  }
+  render() {
+    return (
+      <p>
+        {this.state.message}
+      </p>
+    )
+  }
 }
 
 export default Message
