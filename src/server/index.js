@@ -8,6 +8,7 @@ import { Server } from 'http'
 import routing from './routing'
 import { WEB_PORT, STATIC_PATH } from '../constants/config'
 import { isProd } from '../constants/util'
+import { consoleLogger } from '../logging/logger'
 
 const app = express()
 const http = Server(app)
@@ -19,9 +20,9 @@ app.use(STATIC_PATH, express.static('public'))
 routing(app)
 
 http.listen(WEB_PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server running on port ${WEB_PORT}
+  const logString = `Server running on port ${WEB_PORT}
     ${isProd
     ? '(production)'
-    : '(development).\n Keep "yarn dev:wds" running in another terminal'}`)
+    : '(development).\n Keep "yarn dev:wds" running in another terminal'}`
+  consoleLogger.info(logString)
 })

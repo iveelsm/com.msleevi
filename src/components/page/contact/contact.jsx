@@ -2,6 +2,7 @@
 
 import React from 'react'
 import './contactPage.controller'
+import logger from '../../../logging/logger'
 
 
 class ContactPage extends React.Component {
@@ -20,7 +21,7 @@ class ContactPage extends React.Component {
     this.setState({
       [event.target.name]: event.target.value,
     })
-    console.log(this.state)
+    logger.info(this.state)
   }
 
   handleSubmit() {
@@ -32,7 +33,7 @@ class ContactPage extends React.Component {
   }
 
   render() {
-    console.log('Rendering Contact!')
+    logger.info('Rendering Contact!')
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">

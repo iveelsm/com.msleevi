@@ -1,16 +1,18 @@
 // @flow
 
 import axios from 'axios'
+import logger from '../../../logging/logger'
+
 
 function postContactInformation(endpoint: string, information: Object) {
-  console.log('Posting data!')
+  logger.info('Posting data!')
   axios.post(endpoint, information)
     .then((response) => {
-      console.log(response)
+      logger.info(response)
     })
     .catch((error) => {
-      console.log('Error!')
-      console.log(error)
+      logger.error('Error!')
+      logger.error(error)
     })
 }
 

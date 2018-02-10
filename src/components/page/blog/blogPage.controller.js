@@ -1,16 +1,17 @@
 // @flow
 
 import axios from 'axios'
+import logger from '../../../logging/logger'
 
 function getBlogPosts(endpoint: string) {
   return axios.get(endpoint)
     .then((response) => {
-      console.log(response)
-      console.log('Format data here?')
+      logger.info(response)
+      logger.info('Format data here?')
     })
     .catch((error) => {
-      console.log(error)
-      console.log('Error fetching blog post data')
+      logger.error(error)
+      logger.error('Error fetching blog post data')
     })
 }
 

@@ -3,6 +3,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { APP_NAME } from '../constants/config'
+import logger from '../logging/logger'
 import {
   HOME_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,
@@ -20,7 +21,7 @@ class NavigationBar extends React.Component {
   }
 
   render() {
-    console.log('Rendering Nav')
+    logger.info('Rendering Nav')
     return (
       <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
         <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">

@@ -32,7 +32,6 @@ class HomePage extends React.Component {
   }
 
   render() {
-    console.log('Rendering Home Page')
     return (
       <div>
         <Helmet

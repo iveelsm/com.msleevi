@@ -1,6 +1,8 @@
 // @flow
 
 import renderApp from './render-app'
+import logger from '../logging/logger'
+
 
 import {
   HOME_PAGE_ROUTE,
@@ -43,8 +45,7 @@ function routing(app: Object) {
 
   // eslint-disable-next-line no-unused-vars
   app.use((err, req, res, next) => {
-    // eslint-disable-next-line no-console
-    console.error(err.stack)
+    logger.error(err.stack)
     res.status(500).send('Something went wrong!')
   })
 }

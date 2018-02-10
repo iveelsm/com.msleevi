@@ -4,9 +4,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Switch from 'react-router'
 import { Route } from 'react-router-dom'
+
 import { APP_NAME } from '../constants/config'
 import NavigationBar from './navigation-bar'
-
 import ProjectsPage from './page/projects/projects'
 import ContactPage from './page/contact/contact'
 import HomePage from './page/home/home'
@@ -14,6 +14,7 @@ import AdminPage from './page/admin/admin'
 import BlogPage from './page/blog/blog'
 import CVPage from './page/cv/CV'
 import Footer from './page/footer'
+import logger from '../logging/logger'
 
 import NotFoundPage from './page/not-found'
 import {
@@ -34,7 +35,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('Rendering App')
+    logger.info('Rendering App')
     return (
       <div style={{ paddingTop: 54 }}>
         <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />

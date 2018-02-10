@@ -36,4 +36,4 @@ class BlogPage extends React.Component {
   }
 }
 
-export default BlogPage
+export { BlogPage as default }
