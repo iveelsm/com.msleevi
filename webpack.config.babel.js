@@ -32,7 +32,7 @@ export default {
       'Access-Control-Allow-Origin': '*',
     },
   },
-  target: 'node',
+  target: 'web',
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),

@@ -14,7 +14,6 @@ import AdminPage from './page/admin/admin'
 import BlogPage from './page/blog/blog'
 import CVPage from './page/cv/CV'
 import Footer from './page/footer'
-import logger from '../logging/logger'
 
 import {
   HOME_PAGE_ROUTE,
@@ -34,7 +33,6 @@ class App extends React.Component {
   }
 
   render() {
-    logger.info('Rendering App')
     return (
       <div style={{ paddingTop: 54 }}>
         <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />

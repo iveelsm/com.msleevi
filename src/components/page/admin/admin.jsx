@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react'
-import logger from '../../../logging/logger'
 
 class AdminPage extends React.Component {
   constructor(props) {
@@ -13,7 +12,6 @@ class AdminPage extends React.Component {
   }
 
   render() {
-    logger.info('Rendering Admin')
     return (
       <form>
         <h3>Please enter credentials</h3>
