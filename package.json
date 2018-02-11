@@ -40,7 +40,7 @@
     "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4",
     "tether": "^1.4.3",
-    "winston": "^3.0.0-rc1"
+    "winston": "^2.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

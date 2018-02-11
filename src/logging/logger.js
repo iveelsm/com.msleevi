@@ -1,6 +1,6 @@
 // @flow
 
-import { createLogger, transports } from 'winston'
+import { Logger, transports } from 'winston'
 import { isProd, logLevel, logFile, errorFile } from '../constants/util'
 
 function returnProductionTransports() {
@@ -31,7 +31,7 @@ function generateLogger(status: boolean) {
     ? returnProductionTransports()
     : returnDevTransports()
   return (
-    createLogger({
+    new Logger({
       level: logLevel,
       transports: transport,
     })

@@ -13,7 +13,6 @@ import { APP_CONTAINER_SELECTOR } from '../constants/config'
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
 
 function wrapApp(AppComponent) {
-  console.log('Attempting to wrapApp')
   return (
     <BrowserRouter>
       <AppContainer>

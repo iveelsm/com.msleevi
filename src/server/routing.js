@@ -3,7 +3,6 @@
 import renderApp from './render-app'
 import logger from '../logging/logger'
 
-
 import {
   HOME_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,

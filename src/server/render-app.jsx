@@ -27,11 +27,11 @@ const renderApp = (location: string, routerContext: ?Object = {}) => {
         <link rel="stylesheet" href="${STATIC_PATH}/css/bootstrap.min.css">
       </head>
       <body>
-        <div class=${APP_CONTAINER_CLASS}>${appHtml}</div>
+        <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
         <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/dist`}/js/bundle.js"></script>
       </body>
     </html>`
   )
 }
 
-export default renderApp
+export { renderApp as default }
