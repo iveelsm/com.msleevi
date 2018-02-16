@@ -49,4 +49,4 @@ function routing(app: Object) {
   })
 }
 
-export default routing
+export { routing as default }
