@@ -1,0 +1,22 @@
+# YARN AND NPM
+## Yarn lock files
+yarn.lock
+
+## Error logs for npm and yarn
+/*.log
+
+# NODE
+## Node modules
+*node_modules*
+
+# JEST
+## Jest coverage
+*coverage*
+
+# BABEL
+## Babel compilation directory
+*lib*
+
+# WEBPACK
+## Webpack compilation
+*dist*
