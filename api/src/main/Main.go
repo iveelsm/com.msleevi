@@ -11,7 +11,7 @@ var session *http.Server
 var router Router
 
 func http.Server constructSession() {
-  return &http.Server{
+  return &http.Server {
         Addr:           port,
         Handler:        &r,
         ReadTimeout:    10 * time.Second,
