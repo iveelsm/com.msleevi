@@ -7,6 +7,7 @@ init:
 	sudo gem install fpm
 
 clean:
+	sudo rm -rf pkg
 	$(MAKE) -C src clean GOPATH=$(GOPATH)	GOBIN=$(GOBIN)
 	$(MAKE) -C package clean
 
@@ -18,4 +19,4 @@ run:
 	$(MAKE) src run
 
 deploy:
-	echo "Deploying API"
+	sudo yum install --assumeyes package/build/dist/com-msleevi-api-*.rpm

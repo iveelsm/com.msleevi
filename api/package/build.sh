@@ -38,14 +38,14 @@ if [ -z ${API_VERSION} ]; then
 fi
 
 if [ -z ${BUILD_NUMBER} ]; then
-  BUILD_NUMBER=$(rpm -qa ${PACKAGE_NAME} | cut -d- -f3 | cut -d. -f3)
+  BUILD_NUMBER=$(rpm -qa ${PACKAGE_NAME} | cut -d- -f4 | cut -d. -f3)
   if [ -z ${BUILD_NUMBER} ]; then
     BUILD_NUMBER=0
   fi
 fi
 
 if [ -z ${ITERATION} ]; then
-  ITERATION=$(rpm -qa ${PACKAGE_NAME} | cut -d- -f4 | cut -d. -f1)
+  ITERATION=$(rpm -qa ${PACKAGE_NAME} | cut -d- -f5 | cut -d. -f1)
   if [ -z ${ITERATION} ]; then
     ITERATION=1
   else
