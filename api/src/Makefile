@@ -2,9 +2,10 @@
 
 clean:
 	rm -rf bin
-	go clean ./main/Main.go
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go clean ./main/Main.go
 
 build:
-	go build ./main/Main.go
+	(cd scripts && ./install_requirements.sh)
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go build ./main/Main.go
 	mkdir bin
 	mv Main bin/
