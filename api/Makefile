@@ -1,10 +1,15 @@
 .PHONY: clean build deploy
 
 clean:
-	rm -rf build/
+	$(MAKE) -c src clean
+	$(MAKE) -c package clean
 
 build:
-	export GOPATH=$(pwd)/src/main/:${GOPATH}
+	$(MAKE) -C src build
+	$(MAKE) -C package build
+
+run:
+	$(MAKE) src run
 
 deploy:
 	echo "Deploying API"

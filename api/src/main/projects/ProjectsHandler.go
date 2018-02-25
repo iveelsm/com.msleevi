@@ -1,13 +1,10 @@
-package main.projects
+package projects
 
-func getProjects() () {
+import (
+    "fmt"
+    "net/http"
+)
 
-}
-
-func postProject() () {
-
-}
-
-func deleteProjects() () {
-  
+func HandleProjectsRequest(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintln(w, "hit Projects endpoint")
 }

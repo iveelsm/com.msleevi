@@ -1,31 +1,42 @@
 package main
 
 import (
-    "fmt"
-    "html"
     "log"
     "net/http"
+
+    "main/projects"
+    "main/cv"
+    "main/blog"
+    "main/admin"
+
+    "github.com/gorilla/mux"
 )
 
-var session *http.Server
-var router Router
+func BlogHandler(w http.ResponseWriter, r *http.Request) {
+  blog.HandleBlogRequest(w, r)
+}
 
-func http.Server constructSession() {
-  return &http.Server {
-        Addr:           port,
-        Handler:        &r,
-        ReadTimeout:    10 * time.Second,
-        WriteTimeout:   10 * time.Second,
-        MaxHeaderBytes: 1 << 20,
-    }
+func CVHandler(w http.ResponseWriter, r *http.Request) {
+  cv.HandleCVRequest(w, r)
+}
+
+func AdminHandler(w http.ResponseWriter, r *http.Request) {
+  admin.HandleAdminRequest(w, r)
+}
+
+func ProjectsHandler(w http.ResponseWriter, r *http.Request) {
+  projects.HandleProjectsRequest(w, r)
 }
 
 
 func main() {
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
-    })
-
-    log.Fatal(http.ListenAndServe(":8080", nil))
+  r := mux.NewRouter()
+  r.HandleFunc("/blog", BlogHandler)
+  r.HandleFunc("/projects", ProjectsHandler)
+  r.HandleFunc("/admin", AdminHandler)
+  r.HandleFunc("/cv", CVHandler)
+  if err := http.ListenAndServe(":8080", r); err != nil {
+    log.Fatal(err)
+  }
 
 }

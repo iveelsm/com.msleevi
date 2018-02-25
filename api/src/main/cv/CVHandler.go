@@ -1,13 +1,10 @@
-package main.cv
+package cv
 
-func getCV() () {
+import (
+    "fmt"
+    "net/http"
+)
 
-}
-
-func postCV() () {
-
-}
-
-func deleteCV() () {
-
+func HandleCVRequest(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintln(w, "hit CV endpoint")
 }
