@@ -8,7 +8,7 @@ build_rpm() {
   mkdir -p build/dist
   mkdir -p $opt
 
-  cp ../src/bin/api.go $opt/
+  cp ../src/bin/api $opt/
 
   fpm -s dir                                            \
     -t rpm                                              \
@@ -38,14 +38,14 @@ if [ -z ${API_VERSION} ]; then
 fi
 
 if [ -z ${BUILD_NUMBER} ]; then
-  BUILD_NUMBER=$(rpm -qa ${PACKAGE_NAME} | cut -d -f3 | cut -d. -f3)
+  BUILD_NUMBER=$(rpm -qa ${PACKAGE_NAME} | cut -d- -f3 | cut -d. -f3)
   if [ -z ${BUILD_NUMBER} ]; then
     BUILD_NUMBER=0
   fi
 fi
 
 if [ -z ${ITERATION} ]; then
-  ITERATION=$(rpm -qa ${PACKAGE_NAME} | cut -d -f4 | cut -d. f1)
+  ITERATION=$(rpm -qa ${PACKAGE_NAME} | cut -d- -f4 | cut -d. -f1)
   if [ -z ${ITERATION} ]; then
     ITERATION=1
   else
@@ -53,6 +53,6 @@ if [ -z ${ITERATION} ]; then
   fi
 fi
 
-echo "Building ${VERSION}.${BUILD_NUMBER}-${ITERATION}"
+echo "Building ${API_VERSION}.${BUILD_NUMBER}-${ITERATION}"
 build_rpm
-echo "${VERSION}.${BUILD_NUMBER}-${ITERATION}" > build/dist/${PACKAGE_NAME}-latest-version.txt
+echo "${API_VERSION}.${BUILD_NUMBER}-${ITERATION}" > build/dist/${PACKAGE_NAME}-latest-version.txt

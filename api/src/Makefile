@@ -8,4 +8,4 @@ build:
 	(cd scripts && ./install_requirements.sh)
 	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go build ./main/Main.go
 	mkdir bin
-	mv Main bin/
+	mv Main bin/api
