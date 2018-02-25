@@ -15,8 +15,14 @@ yarn.lock
 
 # BABEL
 ## Babel compilation directory
-*lib*
+ui/*lib*
 
 # WEBPACK
 ## Webpack compilation
 *dist*
+
+api/src/bin
+api/src/github.com
+api/pkg
+
+api/package/build

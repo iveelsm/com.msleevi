@@ -1,0 +1,14 @@
+[Unit]
+Description=API for msleevi.com
+After=network.target
+
+[Service]
+Type=forking
+User=api
+WorkingDirectory=/opt/com/msleevi/api/
+ExecStart=/usr/local/bin/api
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=multiuser.target
