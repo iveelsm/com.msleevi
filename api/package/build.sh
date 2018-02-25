@@ -8,6 +8,7 @@ build_rpm() {
   mkdir -p build/dist
   mkdir -p $opt
 
+  cp -r root build/
   cp ../src/bin/api $opt/
 
   fpm -s dir                                            \
