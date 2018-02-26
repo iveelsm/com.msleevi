@@ -23,7 +23,7 @@ yarn.lock
 # BABEL
 
 ## Babel compilation directory
-ui/lib
+
 
 # WEBPACK
 ## Webpack compilation

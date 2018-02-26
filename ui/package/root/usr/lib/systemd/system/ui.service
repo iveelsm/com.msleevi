@@ -1,0 +1,14 @@
+[Unit]
+Description=UI for msleevi.com
+After=network.target
+
+[Service]
+Type=forking
+User=api
+WorkingDirectory=/opt/com/msleevi/ui/
+ExecStart=/usr/local/bin/ui
+Restart=always
+RestartSec=60s
+
+[Install]
+WantedBy=multiuser.target
