@@ -35,6 +35,7 @@ func main() {
   r.HandleFunc("/projects", ProjectsHandler)
   r.HandleFunc("/admin", AdminHandler)
   r.HandleFunc("/cv", CVHandler)
+  r.HandleFunc("/contact", ContactHandler)
   if err := http.ListenAndServe(":8080", r); err != nil {
     log.Fatal(err)
   }
