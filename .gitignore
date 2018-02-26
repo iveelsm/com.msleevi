@@ -1,4 +1,9 @@
+###################
+### UI Excludes ###
+###################
+
 # YARN AND NPM
+
 ## Yarn lock files
 yarn.lock
 
@@ -6,21 +11,27 @@ yarn.lock
 /*.log
 
 # NODE
+
 ## Node modules
 *node_modules*
 
 # JEST
+
 ## Jest coverage
 *coverage*
 
 # BABEL
+
 ## Babel compilation directory
-ui/*lib*
+ui/lib
 
 # WEBPACK
 ## Webpack compilation
 *dist*
 
+####################
+### API Excludes ###
+####################
 api/src/bin
 api/src/github.com
 api/pkg

@@ -1,27 +1,21 @@
 #!/usr/bin/env bash
 
 PACKAGE_NAME=com-msleevi
-DIR_NAME=com/msleevi
+DIR_NAME=com/msleevi/ui
 
-function buildRPM() {
+build_rpm() {
   opt=build/root/opt/$DIR_NAME
   mkdir -p build/dist
+
   cp -rp root/ build/root
 
-  mkdir -p $opt/jars
-
-  # Third-party jars
-  cp ../java/build/jars/*.jar $opt/jars/
-
-  # main jar
-  cp ../java/build/libs/*.jar $opt/jars/
-
   fpm -s dir \
-  	-t rpm \
-	-a x86_64 \
-	-p build/dist \
-	-n $PACKAGE_NAME \
-    -v $VERSION.$BUILD_NUMBER --iteration $ITERATION --prefix / \
+    -t rpm \
+	  -a x86_64 \
+	  -p build/dist \
+	  -n $PACKAGE_NAME \
+    -v $VERSION.$BUILD_NUMBER \
+    --iteration $ITERATION --prefix / \
     --before-install scripts/1_BeforeInstallUpgrade.sh \
     --before-upgrade scripts/1_BeforeInstallUpgrade.sh \
     --after-install  scripts/2_AfterInstallUpgrade.sh  \
@@ -32,13 +26,13 @@ function buildRPM() {
     --rpm-rpmbuild-define "_release $ITERATION" \
     -C build/root \
     --log info \
-      .
+    .
 }
 
 set -e
 
 if [ -z "${VERSION}" ]; then
-    VERSION=0.1
+    VERSION=1.0
 fi
 
 if [ -z "${BUILD_NUMBER}" ]; then
@@ -62,5 +56,5 @@ fi
 
 echo Building $VERSION.$BUILD_NUMBER
 
-buildRPM
+build_rpm
 echo "$VERSION.$BUILD_NUMBER-$ITERATION" > build/dist/$PACKAGE_NAME-latest-version.txt
