@@ -1,12 +1,14 @@
+package admin
+
 type User struct {
-  name string,
-  email string,
-  isAdmin bool,
-  password Password,
+  name          string
+  email         string
+  isAdmin       bool
+  password      Password
 }
 
 type Password struct {
-  encryption string,
-  vector string,
-  password string,
+  encryption    string
+  vector        string
+  password      string
 }

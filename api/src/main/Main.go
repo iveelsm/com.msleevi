@@ -8,6 +8,7 @@ import (
     "main/cv"
     "main/blog"
     "main/admin"
+    "main/contact"
 
     "github.com/gorilla/mux"
 )
@@ -28,6 +29,9 @@ func ProjectsHandler(w http.ResponseWriter, r *http.Request) {
   projects.HandleProjectsRequest(w, r)
 }
 
+func ContactHandler(w http.ResponseWriter, r *http.Request) {
+  contact.HandleContactRequest(w, r)
+}
 
 func main() {
   r := mux.NewRouter()

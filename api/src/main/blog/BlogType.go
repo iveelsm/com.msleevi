@@ -1,13 +1,15 @@
+package blog
+
 type Blog struct {
-  date string,
-  post string,
-  author string,
-  comments []Comment,
-  replies []Comment,
+  date           string
+  post           string
+  author         string
+  comments       []Comment
+  replies        []Comment
 }
 
 type Comment struct {
-  name string,
-  date string,
-  comment string,
+  name          string
+  date          string
+  comment       string
 }

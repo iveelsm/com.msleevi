@@ -1,3 +1,5 @@
+package cv
+
 type CV struct {
-  data string,
+  data   string
 }
