@@ -1,6 +1,7 @@
 package contact
 
 import (
+    "encoding/json"
     "fmt"
     "net/http"
 
@@ -25,6 +26,13 @@ func getContact(w http.ResponseWriter, r *http.Request) {
 }
 
 func postContact(w http.ResponseWriter, r *http.Request) {
+  var ret Contact
+  decoder := json.NewDecoder(r.Body)
+  err := decoder.Decode(&ret)
+  if err != nil {
+    fmt.Println(err)
+  }
+  fmt.Printf("%+v\n", ret)
   fmt.Fprintln(w, "POST Request on Contact Endpoint")
 }
 
