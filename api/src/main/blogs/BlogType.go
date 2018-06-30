@@ -1,5 +1,7 @@
 package blog
 
+import "github.com/google/uuid"
+
 /*
 Blog structure
 Blog test
@@ -8,7 +10,7 @@ type Blog struct {
 	Date     uint64
 	Post     BlogPost
 	Stats    []BlogStat
-	Author   uuid
+	Author   uuid.UUID
 	Comments []Comment
 	Views    int
 }
@@ -24,7 +26,7 @@ type Stat struct {
 Comment structure
 */
 type Comment struct {
-	Author  uuid
+	Author  uuid.UUID
 	Date    uint64
 	Comment string
 	Replies []Comment
@@ -50,6 +52,6 @@ Vote structure
 */
 type Vote struct {
 	Vote  int
-	Voter uuid
+	Voter uuid.UUID
 	Date  uint64
 }

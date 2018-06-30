@@ -32,8 +32,15 @@ yarn.lock
 ####################
 ### API Excludes ###
 ####################
+api/bin
 api/src/bin
+api/src/golang.org
 api/src/github.com
 api/pkg
 
 api/package/build
+
+####################
+### IDE Excludes ###
+####################
+.vscode
