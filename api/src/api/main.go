@@ -1,13 +1,14 @@
 package main
 
 import (
-	"log"
+	"api/utils"
 	"net/http"
 
-	"main/utils"
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {
+	utils.ConfigureLogger()
 	r := utils.ConstructRouter()
 	if err := http.ListenAndServe(":8080", r); err != nil {
 		log.Fatal(err)

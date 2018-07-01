@@ -1,7 +1,7 @@
 package users
 
 import (
-	"main/constants"
+	"api/constants"
 
 	"github.com/gorilla/mux"
 )
