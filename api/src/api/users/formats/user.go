@@ -1,4 +1,4 @@
-package users
+package formats
 
 import (
 	"github.com/google/uuid"
@@ -13,7 +13,7 @@ type User struct {
 	Admin         bool
 	Password      Password
 	Notifications bool
-	id            uuid.UUID
+	ID            uuid.UUID
 	LastLogin     uint64
 	CreatedAt     uint64
 }
