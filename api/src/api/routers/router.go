@@ -1,6 +1,9 @@
 package routers
 
 import (
+	"api/blogs"
+	"api/contact"
+	"api/cv"
 	"api/projects"
 	"api/users"
 
@@ -15,6 +18,9 @@ func ConstructRouter() *mux.Router {
 	r := mux.NewRouter()
 	users.AddUsersRoutes(r)
 	projects.AddProjectsRoutes(r)
+	blogs.AddBlogsRoutes(r)
+	cv.AddResumeRoutes(r)
+	contact.AddContactRoutes(r)
 	logRoutes(r)
 	return r
 }

@@ -1,4 +1,4 @@
-package blog
+package blogs
 
 import "github.com/google/uuid"
 
@@ -8,8 +8,8 @@ Blog test
 */
 type Blog struct {
 	Date     uint64
-	Post     BlogPost
-	Stats    []BlogStat
+	Post     Post
+	Stats    []Stat
 	Author   uuid.UUID
 	Comments []Comment
 	Views    int
