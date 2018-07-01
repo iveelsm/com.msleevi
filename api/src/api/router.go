@@ -21,11 +21,20 @@ func ConstructRouter() *mux.Router {
 
 func logRoutes(r *mux.Router) {
 	r.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
-		t, err := route.GetPathTemplate()
+		path, err := route.GetPathTemplate()
 		if err != nil {
 			return err
 		}
-		log.Info(t)
+		handler := route.GetHandler()
+		methods, err := route.GetMethods()
+		if err != nil {
+			methods = []string{}
+		}
+		log.WithFields(log.Fields{
+			"route":   path,
+			"handler": handler,
+			"methods": methods,
+		}).Info("Route Information:")
 		return nil
 	})
 }
