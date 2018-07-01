@@ -25,14 +25,12 @@ func logRoutes(r *mux.Router) {
 		if err != nil {
 			return err
 		}
-		handler := route.GetHandler()
 		methods, err := route.GetMethods()
 		if err != nil {
 			methods = []string{}
 		}
 		log.WithFields(log.Fields{
 			"route":   path,
-			"handler": handler,
 			"methods": methods,
 		}).Info("Route Information:")
 		return nil
