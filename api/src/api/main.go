@@ -9,7 +9,7 @@ import (
 
 func main() {
 	utils.ConfigureLogger()
-	r := constructRouter()
+	r := ConstructRouter()
 	if err := http.ListenAndServe(":8080", r); err != nil {
 		log.Fatal(err)
 	}
