@@ -1,4 +1,4 @@
-package main
+package api
 
 import (
 	"api/utils"
@@ -9,7 +9,7 @@ import (
 
 func main() {
 	utils.ConfigureLogger()
-	r := utils.ConstructRouter()
+	r := constructRouter()
 	if err := http.ListenAndServe(":8080", r); err != nil {
 		log.Fatal(err)
 	}
