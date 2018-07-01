@@ -15,8 +15,8 @@ build: clean
 	$(MAKE) -C src build GOPATH=$(GOPATH)	GOBIN=$(GOBIN)
 	$(MAKE) -C package build
 
-run: build
-	$(MAKE) -C src run
+run:
+	$(MAKE) -C src run GOPATH=$(GOPATH)
 
 deploy:
 	sudo yum install --assumeyes package/build/dist/com-msleevi-api-*.rpm
