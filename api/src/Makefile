@@ -1,14 +1,14 @@
-.PHONY: clean build
+.PHONY: clean build run
 
 clean:
 	rm -rf bin
-	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go clean ./api/main.go
-
-build:
-	(cd scripts && ./install_requirements.sh)
-	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go build ./api/main.go
 	mkdir bin
-	mv main bin/api
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go clean ./api/*.go
 
-run:
-	@GOPATH=$(GOPATH) @GOBIN=$(GOBIN) go run ./api/main.gp
+build: clean
+	(cd scripts && ./install_requirements.sh)
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go build ./api/*.go
+	mv api bin/api
+
+run: build
+	@GOPATH=$(GOPATH) @GOBIN=$(GOBIN) go run ./api/*.go

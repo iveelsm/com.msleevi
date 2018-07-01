@@ -11,7 +11,7 @@ import (
 /*
 ConstructRouter does
 */
-func constructRouter() *mux.Router {
+func ConstructRouter() *mux.Router {
 	r := mux.NewRouter()
 	users.AddUsersRoutes(r)
 	projects.AddProjectsRoutes(r)
