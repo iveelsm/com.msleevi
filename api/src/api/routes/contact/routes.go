@@ -2,7 +2,7 @@ package contact
 
 import (
 	"api/constants"
-	"api/contact/handlers"
+	"api/routes/contact/handlers"
 
 	"github.com/gorilla/mux"
 )

@@ -2,7 +2,7 @@ package users
 
 import (
 	"api/constants"
-	"api/users/handlers"
+	"api/routes/users/handlers"
 
 	"github.com/gorilla/mux"
 )

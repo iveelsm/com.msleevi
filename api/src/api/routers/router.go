@@ -1,11 +1,11 @@
 package routers
 
 import (
-	"api/blogs"
-	"api/contact"
-	"api/cv"
-	"api/projects"
-	"api/users"
+	"api/routes/blogs"
+	"api/routes/contact"
+	"api/routes/cv"
+	"api/routes/projects"
+	"api/routes/users"
 
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"

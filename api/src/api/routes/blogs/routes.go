@@ -1,8 +1,8 @@
 package blogs
 
 import (
-	"api/blogs/handlers"
 	"api/constants"
+	"api/routes/blogs/handlers"
 
 	"github.com/gorilla/mux"
 )

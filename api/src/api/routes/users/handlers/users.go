@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"api/users/formats"
+	"api/routes/users/formats"
 	"api/utils"
 	"encoding/json"
 	"net/http"

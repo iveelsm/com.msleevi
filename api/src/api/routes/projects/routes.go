@@ -2,7 +2,7 @@ package projects
 
 import (
 	"api/constants"
-	"api/projects/handlers"
+	"api/routes/projects/handlers"
 
 	"github.com/gorilla/mux"
 )

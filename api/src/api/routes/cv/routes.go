@@ -2,7 +2,7 @@ package cv
 
 import (
 	"api/constants"
-	"api/cv/handlers"
+	"api/routes/cv/handlers"
 
 	"github.com/gorilla/mux"
 )
