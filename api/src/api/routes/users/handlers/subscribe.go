@@ -1,23 +1,22 @@
 package handlers
 
 import (
-	"api/routes"
+	"errors"
 	"net/http"
 
 	"github.com/gorilla/mux"
 )
 
-func SubscribeUsersHandler(w http.ResponseWriter, r *http.Request) {
+// SubscribeUser does
+func SubscribeUser(w http.ResponseWriter, r *http.Request) (ret []byte, code int, err error) {
 	params := mux.Vars(r)
 	result, err := subscribeUser(params)
 
 	if err != nil {
-		routes.HandleError("Unable to subscribe user", 504, w)
-		return
+		return nil, 504, errors.New("Unable to subscribe user")
 	}
 
-	w.WriteHeader(204)
-	w.Write([]byte(result))
+	return []byte(result), 204, nil
 }
 
 func subscribeUser(params map[string]string) (result string, err error) {

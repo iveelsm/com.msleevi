@@ -1,6 +1,8 @@
 package formats
 
 import (
+	"time"
+
 	"github.com/google/uuid"
 )
 
@@ -8,21 +10,19 @@ import (
 User structure
 */
 type User struct {
-	Name          string
-	Email         string
-	Admin         bool
-	Password      Password
-	Notifications bool
-	ID            uuid.UUID
-	LastLogin     uint64
-	CreatedAt     uint64
+	Name          string    `json:"name"`
+	Email         string    `json:"email"`
+	Admin         bool      `json:"admin"`
+	Password      string    `json:"password"`
+	Notifications bool      `json:"notifications"`
+	ID            uuid.UUID `json:"id"`
+	LastLogin     time.Time `json:"lastLogin"`
+	CreatedAt     time.Time `json:"createdAt"`
 }
 
 /*
 Password structure
 */
 type Password struct {
-	Encryption string
-	Vector     string
-	Password   string
+	Password string `json:"password"`
 }

@@ -8,10 +8,10 @@ import (
 Project does
 */
 type Project struct {
-	name        string
-	date        time.Time
-	url         string
-	image       string
-	synopsis    string
-	description string
+	Name        string    `json:"name"`
+	Date        time.Time `json:"date"`
+	URL         string    `json:"url"`
+	Image       string    `json:"image"`
+	Synopsis    string    `json:"synopsis"`
+	Description string    `json:"description"`
 }
