@@ -2,3 +2,4 @@ github.com/gorilla/mux
 github.com/olivere/elastic
 github.com/google/uuid
 github.com/sirupsen/logrus
+github.com/go-kivik/couchdb
