@@ -1,8 +1,8 @@
 package handlers
 
 import (
+	"api/routes"
 	"api/routes/users/formats"
-	"api/utils"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
@@ -12,7 +12,7 @@ func LoginUsersHandler(w http.ResponseWriter, r *http.Request) {
 	body, err := ioutil.ReadAll(r.Body)
 
 	if err != nil {
-		utils.HandleError("Unable to parse into Login object", 504, w)
+		routes.HandleError("Unable to parse into Login object", 504, w)
 		return
 	}
 
@@ -20,14 +20,14 @@ func LoginUsersHandler(w http.ResponseWriter, r *http.Request) {
 	err = json.Unmarshal([]byte(body), login)
 
 	if err != nil {
-		utils.HandleError("Unable to construct Login object", 504, w)
+		routes.HandleError("Unable to construct Login object", 504, w)
 		return
 	}
 
 	result, err := handleLogin(login)
 
 	if err != nil {
-		utils.HandleError("Unable to login", 500, w)
+		routes.HandleError("Unable to login", 500, w)
 		return
 	}
 

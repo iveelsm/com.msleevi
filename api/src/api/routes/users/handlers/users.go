@@ -1,8 +1,8 @@
 package handlers
 
 import (
+	"api/routes"
 	"api/routes/users/formats"
-	"api/utils"
 	"encoding/json"
 	"net/http"
 
@@ -15,14 +15,14 @@ func GetUsersHandler(w http.ResponseWriter, r *http.Request) {
 	result, err := handleUsers(params)
 
 	if err != nil {
-		utils.HandleError("Unable to GET /users", 500, w)
+		routes.HandleError("Unable to GET /users", 500, w)
 		return
 	}
 
 	bytes, err := json.Marshal(result)
 
 	if err != nil {
-		utils.HandleError("Unable to parse data into return body", 504, w)
+		routes.HandleError("Unable to parse data into return body", 504, w)
 		return
 	}
 

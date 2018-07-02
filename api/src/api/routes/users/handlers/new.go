@@ -1,8 +1,8 @@
 package handlers
 
 import (
+	"api/routes"
 	"api/routes/users/formats"
-	"api/utils"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
@@ -15,7 +15,7 @@ func NewUsersHandler(w http.ResponseWriter, r *http.Request) {
 	body, err := ioutil.ReadAll(r.Body)
 
 	if err != nil {
-		utils.HandleError("Unable to parse into User object", 504, w)
+		routes.HandleError("Unable to parse into User object", 504, w)
 		return
 	}
 
@@ -23,14 +23,14 @@ func NewUsersHandler(w http.ResponseWriter, r *http.Request) {
 	err = json.Unmarshal([]byte(body), user)
 
 	if err != nil {
-		utils.HandleError("Unable to construct User object", 504, w)
+		routes.HandleError("Unable to construct User object", 504, w)
 		return
 	}
 
 	result, err := handleNewUser(params, user)
 
 	if err != nil {
-		utils.HandleError("Unable to create new User", 500, w)
+		routes.HandleError("Unable to create new User", 500, w)
 		return
 	}
 

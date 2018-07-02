@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"api/utils"
+	"api/routes"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -12,7 +12,7 @@ func RemoveUsersHandler(w http.ResponseWriter, r *http.Request) {
 	result, err := removeUser(params)
 
 	if err != nil {
-		utils.HandleError("Unable to delete user", 504, w)
+		routes.HandleError("Unable to delete user", 504, w)
 	}
 
 	w.WriteHeader(204)
