@@ -22,10 +22,12 @@ func Handle(handler func(http.ResponseWriter, *http.Request) ([]byte, int, error
 		}
 
 		log.WithFields(log.Fields{
-			"location":    r.RequestURI,
-			"method":      r.Method,
-			"elapsedTime": utils.NanoToMillis(time.Since(start)),
-		}).Info("API Call Measurements")
+			"requestLocation": r.RequestURI,
+			"requestMethod":   r.Method,
+			"responseCode":    code,
+			"bytes":           len(result),
+			"elapsedTime":     utils.NanoToMillis(time.Since(start)),
+		}).Info("apiMeasurements")
 	}
 }
 
