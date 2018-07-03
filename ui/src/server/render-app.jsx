@@ -24,7 +24,8 @@ const renderApp = (location: string, routerContext: ?Object = {}) => {
       <head>
         ${head.title}
         ${head.meta}
-        <link rel="stylesheet" href="${STATIC_PATH}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${STATIC_PATH}/css/public.css">
+        <link rel="stylesheet" href="${STATIC_PATH}/css/home.css">        
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
