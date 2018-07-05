@@ -13,7 +13,7 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="container mt-5">
+      <div className="footer">
         <hr />
         <footer>
           <p>© {APP_NAME} 2018</p>

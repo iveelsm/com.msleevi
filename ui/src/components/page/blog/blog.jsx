@@ -3,16 +3,27 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import BlogList from '../../list/blog-list'
+import { HTTP, API_LOCATION, API_PORT } from '../../../constants/config'
+import BlogList from './blogList'
+import { getBlogPosts } from './blogPage.controller'
+import logger from '../../../logging/logger';
 
 const title = 'Blog'
 
 class BlogPage extends React.Component {
   componentWillMount() {
     this.state = {
-      posts: [],
-      comments: [],
+      posts : [],
     }
+  }
+
+  componentDidMount() {
+    console.info("Did mount")
+    getBlogPosts(HTTP + API_LOCATION + ":" + API_PORT)
+        .then(result => {
+          this.setState({posts : results.data})
+        })
+    logger.info("Data: " + this.state.posts)
   }
 
   render() {
@@ -28,7 +39,7 @@ class BlogPage extends React.Component {
         <div className="row">
           <div className="col-12">
             <h1>{title}</h1>
-            <BlogList />
+            <BlogList posts={this.state.posts} />
           </div>
         </div>
       </div>

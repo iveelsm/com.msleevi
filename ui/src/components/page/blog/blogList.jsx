@@ -6,18 +6,14 @@ class BlogList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      posts: [],
+      posts: props.posts,
     }
-  }
-
-  componentWillMount() {
-    console.log('Include fetchPosts shit here')
   }
 
   render() {
     return (
       <ul>
-        <li>{this.state.posts}</li>
+        { this.state.posts.map(post => <li>{post}</li>)}
       </ul>
     )
   }
