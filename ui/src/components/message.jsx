@@ -3,11 +3,13 @@
 import React from 'react'
 
 class Message extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props)
     this.state = {
-      message: '',
+      message: props.message || ''
     }
   }
+
   render() {
     return (
       <p>

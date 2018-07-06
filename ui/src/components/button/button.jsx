@@ -3,19 +3,14 @@
 import React from 'react'
 
 class Button extends React.Component {
-  componentWillMount() {
-    this.state = {
-      label: '',
-    }
+  constructor(props) {
+    super(props)
+    this.state.label = props.label || ''
   }
 
   render() {
     return (
-      <button
-        onClick={this.props.handleClick}
-        className="btn btn-primary"
-        type="button"
-      >
+      <button onClick={this.props.handleClick} className="btn btn-primary" type="button">
         {this.state.label}
       </button>
     )

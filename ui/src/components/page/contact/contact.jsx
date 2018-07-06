@@ -20,30 +20,26 @@ class ContactPage extends React.Component {
     })
   }
 
-  handleSubmit() {
-    this.state = {
-      name: '',
-      email: '',
-      message: '',
-    }
+  handleSubmit(event: Object) {
+
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form class="contact" onSubmit={this.handleSubmit}>
         <label htmlFor="name">
           Name:
-          <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
         </label>
+        <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
         <label htmlFor="email">
           Email:
-          <input name="email" type="text" value={this.state.email} onChange={this.handleChange} />
         </label>
+        <input name="email" type="email" value={this.state.email} onChange={this.handleChange} />
         <label htmlFor="message">
           Message:
-          <input name="message" type="text" value={this.state.message} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <textarea name="message" class="message-box"/>
+        <input type="submit" value="Submit" onClick={this.handleSubmit} onChange={this.handleChange} />
       </form>
     )
   }

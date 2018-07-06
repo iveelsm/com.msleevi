@@ -34,9 +34,9 @@ class App extends React.Component {
 
   render() {
     return (
+      <NavigationBar />
       <div style={{ paddingTop: 54 }}>
         <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
-        <NavigationBar />
         <Switch>
           <Route exact path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
           <Route path={CONTACT_PAGE_ROUTE} render={() => <ContactPage />} />
