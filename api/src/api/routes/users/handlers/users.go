@@ -1,15 +1,19 @@
 package handlers
 
 import (
+	"api/database"
 	"api/routes/users/formats"
 	"api/utils"
 	"encoding/json"
 	"errors"
+	"io/ioutil"
 	"net/http"
+	"sort"
 	"time"
 
 	"github.com/google/uuid"
 	"github.com/gorilla/mux"
+	log "github.com/sirupsen/logrus"
 )
 
 // GetUsers does
@@ -18,7 +22,7 @@ func GetUsers(w http.ResponseWriter, r *http.Request) (ret []byte, code int, err
 	result, err := handleUsers(params)
 
 	if err != nil {
-		return nil, 500, errors.New("Unable to GET /users")
+		return nil, 500, errors.New("Unable to GET /users: " + err.Error())
 	}
 
 	bytes, err := json.Marshal(result)
@@ -53,8 +57,35 @@ func GetUser(w http.ResponseWriter, r *http.Request) (ret []byte, code int, err 
 }
 
 func handleUsers(params map[string]string) (users []formats.User, err error) {
-	user := getUserStub()
-	return []formats.User{user}, nil
+	return getUsers()
+}
+
+func sortOnName(users []formats.User) []formats.User {
+	sort.Slice(users[:], func(i, j int) bool {
+		return users[i].Name < users[j].Name
+	})
+	return users
+}
+
+func getUsers() (users []formats.User, err error) {
+	response, err := database.GetAll("users")
+	if err != nil {
+		return []formats.User{}, errors.New("Unable to contact database")
+	}
+
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		return []formats.User{}, errors.New("Unable to parse body")
+	}
+
+	log.Debug("Body: " + string(body))
+
+	err = json.Unmarshal([]byte(body), users)
+	if err != nil {
+		return []formats.User{}, errors.New("Unable to parse into Users")
+	}
+
+	return users, err
 }
 
 func getUserStub() (result formats.User) {
