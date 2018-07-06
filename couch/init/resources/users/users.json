@@ -1,6 +1,6 @@
 [
     {
-        "id"            : "aba8a30b-b25e-496a-b581-15e2012e681c",
+        "_id"            : "aba8a30b-b25e-496a-b581-15e2012e681c",
         "email"         : "michael.sleevi@gmail.com",
         "name"          : "Michael Sleevi",
         "admin"         : true,
@@ -10,7 +10,7 @@
         "createdAt"     : "2018-07-05T17:17:00.900120807-06:00"
     },
     {
-        "id"            : "f77ff571-a76f-463f-b6c1-243ae1142f0e",
+        "_id"            : "f77ff571-a76f-463f-b6c1-243ae1142f0e",
         "email"         : "fake.user@yahoo.com",
         "name"          : "Fake User",
         "admin"         : true,
@@ -20,21 +20,21 @@
         "createdAt"     : "2018-07-05T17:17:00.900120807-06:00"
     },
     {
-        "id"            : "5d0bcbe0-610a-4a25-9f59-ab846be0a1d5",
+        "_id"            : "5d0bcbe0-610a-4a25-9f59-ab846be0a1d5",
         "email"         : "john.smith@gmail.com",
         "name"          : "John Smith",
         "admin"         : true,
-        "password"      : "$@#$SAadfaadadg#$%#$#$T",
+        "password"      : "testasgasadfa",
         "notifications" : false,
         "lastLogin"     : "2018-07-05T17:17:00.900120907-06:00",
         "createdAt"     : "2018-07-05T17:17:00.900120807-06:00"
     },
     {
-        "id"            : "b8f7124a-1476-41ae-93df-1eae14a03a1c",
+        "_id"            : "b8f7124a-1476-41ae-93df-1eae14a03a1c",
         "email"         : "test.user@gmail.com",
         "name"          : "Test User",
         "admin"         : false,
-        "password"      : "testasgasdv@#Q#$TGQEAVAE#$QTQ$GVAd",
+        "password"      : "testasgasd",
         "notifications" : true,
         "lastLogin"     : "2018-07-04T05:18:00.900120907-06:00",
         "createdAt"     : "2018-07-03T17:17:00.900120807-06:00"
