@@ -11,9 +11,9 @@ build_rpm() {
 
   fpm -s dir \
     -t rpm \
-	  -a x86_64 \
-	  -p build/dist \
-	  -n $PACKAGE_NAME \
+    -a x86_64 \
+	-p build/dist \
+	-n $PACKAGE_NAME \
     -v $VERSION.$BUILD_NUMBER \
     --iteration $ITERATION --prefix / \
     --before-install scripts/1_BeforeInstallUpgrade.sh \
