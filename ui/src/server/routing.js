@@ -10,7 +10,7 @@ import {
   PROJECTS_PAGE_ROUTE,
   CONTACT_PAGE_ROUTE,
   ADMIN_PAGE_ROUTE,
-} from './routes/routes'
+} from '../constants/routes/routes'
 
 
 function routing(app: Object) {
