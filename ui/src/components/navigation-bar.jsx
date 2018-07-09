@@ -10,16 +10,10 @@ import {
   CONTACT_PAGE_ROUTE,
   PROJECTS_PAGE_ROUTE,
   CV_PAGE_ROUTE,
-} from '../server/routes/routes'
+} from '../constants/routes/routes'
 
 
 class NavigationBar extends React.Component {
-  componentWillMount() {
-    this.state = {
-      userStatus: '',
-    }
-  }
-
   render() {
     return (
       <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">

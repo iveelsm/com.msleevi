@@ -5,12 +5,6 @@ import { APP_NAME } from '../../constants/config'
 
 
 class Footer extends React.Component {
-  componentWillMount() {
-    this.state = {
-      links: [],
-    }
-  }
-
   render() {
     return (
       <div className="footer">

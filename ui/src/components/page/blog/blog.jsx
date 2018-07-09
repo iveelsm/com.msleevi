@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import { HTTP, API_LOCATION, API_PORT } from '../../../constants/config'
 import BlogList from './blogList'
 import { getBlogPosts } from './blogPage.controller'
-import logger from '../../../logging/logger';
+//import logger from '../../../logging/logger';
 
 const title = 'Blog'
 
@@ -23,7 +23,7 @@ class BlogPage extends React.Component {
         .then(result => {
           this.setState({posts : results.data})
         })
-    logger.info("Data: " + this.state.posts)
+    //logger.info("Data: " + this.state.posts)
   }
 
   render() {

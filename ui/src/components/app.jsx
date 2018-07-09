@@ -6,7 +6,7 @@ import { Switch } from 'react-router'
 import { Route } from 'react-router-dom'
 
 import { APP_NAME } from '../constants/config'
-import NavigationBar from './navigation-bar'
+import {MenuBar as NavigationBar} from './navigation-bar'
 import ProjectsPage from './page/projects/projects'
 import ContactPage from './page/contact/contact'
 import HomePage from './page/home/home'
@@ -22,16 +22,10 @@ import {
   PROJECTS_PAGE_ROUTE,
   CV_PAGE_ROUTE,
   ADMIN_PAGE_ROUTE,
-} from '../server/routes/routes'
+} from '../constants/routes/routes'
 
 
 class App extends React.Component {
-  componentWillMount() {
-    this.state = {
-      userStatus: '',
-    }
-  }
-
   render() {
     return (
       <div style={{ paddingTop: 54 }}>
@@ -50,5 +44,6 @@ class App extends React.Component {
     )
   }
 }
+
 
 export { App as default }
