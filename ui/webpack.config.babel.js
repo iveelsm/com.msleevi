@@ -9,7 +9,7 @@ import { isProd } from './src/constants/util'
 export default {
   entry: [
     'react-hot-loader/patch',
-    './src/index.js'
+    './src/js/index.js'
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

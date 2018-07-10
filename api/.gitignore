@@ -3,7 +3,7 @@
 ####################
 bin/
 src/bin/
-src/golang.org/
+src/github.com/msleevi/com.msleevi/vendor
 pkg/
 
 package/build
