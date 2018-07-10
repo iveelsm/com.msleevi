@@ -1,15 +1,16 @@
 package handlers
 
 import (
-	"api/database"
-	"api/routes/users/formats"
-	"api/utils"
 	"encoding/json"
 	"errors"
 	"io/ioutil"
 	"net/http"
 	"sort"
 	"time"
+
+	"github.com/msleevi/com.msleevi/internal/database"
+	"github.com/msleevi/com.msleevi/internal/routes/users/formats"
+	"github.com/msleevi/com.msleevi/internal/utils"
 
 	"github.com/google/uuid"
 	"github.com/gorilla/mux"

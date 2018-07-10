@@ -3,12 +3,10 @@
 clean:
 	rm -rf bin
 	mkdir bin
-	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go clean ./api/main.go
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go clean ./github.com/msleevi/com.msleevi/cmd/main.go
 
 build: clean
-	(cd scripts && ./install_requirements.sh)
-	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go build ./api/main.go
-	mv main bin/api
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go build ./github.com/msleevi/com.msleevi/cmd/main.go
 
 run:
 	@GOPATH=$(GOPATH) go run ./api/main.go

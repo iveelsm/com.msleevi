@@ -1,11 +1,12 @@
 package handlers
 
 import (
-	"api/routes/users/formats"
 	"encoding/json"
 	"errors"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/msleevi/com.msleevi/internal/routes/users/formats"
 )
 
 /*

@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"api/routes/blogs/formats"
 	"encoding/json"
 	"errors"
 	"net/http"
+
+	"github.com/msleevi/com.msleevi/internal/routes/blogs/formats"
 
 	"github.com/gorilla/mux"
 )

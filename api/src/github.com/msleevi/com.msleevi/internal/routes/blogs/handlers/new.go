@@ -1,11 +1,12 @@
 package handlers
 
 import (
-	"api/routes/blogs/formats"
 	"encoding/json"
 	"errors"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/msleevi/com.msleevi/internal/routes/blogs/formats"
 )
 
 func NewBlogPostsHandler(w http.ResponseWriter, r *http.Request) (ret []byte, code int, err error) {
