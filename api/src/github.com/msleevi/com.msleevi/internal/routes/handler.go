@@ -1,9 +1,10 @@
 package routes
 
 import (
-	"api/utils"
 	"net/http"
 	"time"
+
+	"github.com/msleevi/com.msleevi/internal/utils"
 
 	log "github.com/sirupsen/logrus"
 )

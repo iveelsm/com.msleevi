@@ -1,9 +1,9 @@
 package users
 
 import (
-	"api/constants"
-	"api/routes"
-	"api/routes/users/handlers"
+	"github.com/msleevi/com.msleevi/internal/constants"
+	"github.com/msleevi/com.msleevi/internal/routes"
+	"github.com/msleevi/com.msleevi/internal/routes/users/handlers"
 
 	"github.com/gorilla/mux"
 )

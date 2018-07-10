@@ -1,8 +1,8 @@
 package cv
 
 import (
-	"api/constants"
-	"api/routes/cv/handlers"
+	"github.com/msleevi/com.msleevi/internal/constants"
+	"github.com/msleevi/com.msleevi/internal/routes/cv/handlers"
 
 	"github.com/gorilla/mux"
 )

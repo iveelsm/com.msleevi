@@ -1,9 +1,9 @@
 package blogs
 
 import (
-	"api/constants"
-	"api/routes"
-	"api/routes/blogs/handlers"
+	"github.com/msleevi/com.msleevi/internal/constants"
+	"github.com/msleevi/com.msleevi/internal/routes"
+	"github.com/msleevi/com.msleevi/internal/routes/blogs/handlers"
 
 	"github.com/gorilla/mux"
 )

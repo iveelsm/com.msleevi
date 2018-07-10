@@ -1,8 +1,9 @@
 package database
 
 import (
-	"api/constants"
 	"net/http"
+
+	"github.com/msleevi/com.msleevi/internal/constants"
 
 	log "github.com/sirupsen/logrus"
 )

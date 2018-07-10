@@ -1,8 +1,8 @@
 package projects
 
 import (
-	"api/constants"
-	"api/routes/projects/handlers"
+	"github.com/msleevi/com.msleevi/internal/constants"
+	"github.com/msleevi/com.msleevi/internal/routes/projects/handlers"
 
 	"github.com/gorilla/mux"
 )

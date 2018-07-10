@@ -1,8 +1,8 @@
 package contact
 
 import (
-	"api/constants"
-	"api/routes/contact/handlers"
+	"github.com/msleevi/com.msleevi/internal/constants"
+	"github.com/msleevi/com.msleevi/internal/routes/contact/handlers"
 
 	"github.com/gorilla/mux"
 )

@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"api/routes/users/formats"
+	"github.com/msleevi/com.msleevi/internal/routes/users/formats"
 
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/bcrypt"

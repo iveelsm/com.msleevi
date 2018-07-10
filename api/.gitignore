@@ -1,2 +1,10 @@
-src/pkg
-src/src
+####################
+### API Excludes ###
+####################
+bin/
+src/bin/
+src/golang.org/
+pkg/
+
+package/build
+

@@ -1,11 +1,12 @@
 package routers
 
 import (
-	"api/routes/blogs"
-	"api/routes/contact"
-	"api/routes/cv"
-	"api/routes/projects"
-	"api/routes/users"
+	"github.com/msleevi/com.msleevi/internal/routes/contact"
+	"github.com/msleevi/com.msleevi/internal/routes/cv"
+	"github.com/msleevi/com.msleevi/internal/routes/projects"
+	"github.com/msleevi/com.msleevi/internal/routes/users"
+
+	"github.com/msleevi/com.msleevi/internal/routes/blogs"
 
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"

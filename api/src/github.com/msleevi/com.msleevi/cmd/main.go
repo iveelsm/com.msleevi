@@ -1,9 +1,10 @@
 package main
 
 import (
-	"api/routers"
-	"api/utils"
 	"net/http"
+
+	"github.com/msleevi/com.msleevi/internal/routers"
+	"github.com/msleevi/com.msleevi/internal/utils"
 
 	log "github.com/sirupsen/logrus"
 )
