@@ -44,3 +44,8 @@ api/package/build
 ### IDE Excludes ###
 ####################
 .vscode
+
+######################
+### Bazel Excludes ###
+######################
+bazel-*
